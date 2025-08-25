@@ -27,3 +27,7 @@ def menu_items(request):
 
 def contact(request):
     return render(request,"contact.html")
+
+def homepage(request):
+    phone_number = settings.RESTAURANT_PHONE
+    return render(request "home.html", {"phone_number":phone_number})
