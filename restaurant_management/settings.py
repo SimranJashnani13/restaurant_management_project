@@ -85,6 +85,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+RESTAURANT_PHONE = "91+ 9876543210" 
 
 
 # Password validation
