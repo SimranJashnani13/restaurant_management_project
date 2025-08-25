@@ -14,3 +14,13 @@ def about(request):
     return render(request "about.html",
     {"restaurant_name":restaurant_name,
      "description":description})
+
+def menu_items(request):
+    items = [
+        {"name" : "Margherita Pizza" , "price" : 250},
+        {"name" : "Veggie Burger" , "price" : 150},
+        {"name" : "French Fries" , "price" : 120},
+        {"name" : "Pasta Alfredo" , "price" : 300},
+        {"name" : "Cold Coffee" , "price" : 100},
+    ]
+    return render(request "menu.html",{"items" : items})
