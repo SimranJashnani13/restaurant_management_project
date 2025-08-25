@@ -2,4 +2,15 @@
 <html-lang="en">
 <head>
     <meta charset="utf-8">
-    <meta 
+    <meta name="viewort" content="width=device-width , initial-scale=1">
+    <tittle>Menu</tittle>
+</head>
+<body>
+    <h1>Our Menu</h1>
+    <ul>
+        {% for items in items %}
+            <li>{{item.name}} - {{ item.price}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
