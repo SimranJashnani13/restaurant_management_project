@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import HttpResponse
+from .models import Restaurant 
 
 # Create your views here.
 def home(request):
@@ -31,3 +33,18 @@ def contact(request):
 def homepage(request):
     phone_number = settings.RESTAURANT_PHONE
     return render(request "home.html", {"phone_number":phone_number})
+
+def homepage(request):
+    try:
+        restaurant = Restaurant.objects.first()
+        context = {
+            "restaurant" : restaurant
+        }
+        return render(request "home.html", context)
+
+    except Restaurant.DoesNotExist:
+        return HttpResponse("Restaurant information is not availaible at the moment.", status 404)
+
+    except Exception as e:
+        print(f"Error in homepage view. {e}")
+        return HttpResponse("Something went wrong.Please try again later.", status 500)
